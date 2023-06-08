@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.9.3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.1"></script>
+</head>
+
+<body>
+  <div id="vis" />
+  <script>
+    const spec = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "width": 900,
+      "height": 500,
+      "background": "#191919",
+      "layer": [
+        {
+          "data": {
+            "url": "data/schweiz_4326.json",
+            "format": {
+              "type": "topojson",
+              "feature": "schweiz_4326"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "stroke": "#F0F8FF",
+            "fillOpacity": 0
+          }
+        },
+        
+        {
+          "data": {
+            "url": "data/tick-reports.json",
+            "format": {
+              "type": "topojson",
+              "feature": "tick-reports"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "color": "#42affa",
+            "size": 500,
+            "opacity": 0.1,
+            "pointRadius": 50,
+
+          }
+        },
+        {
+          "data": {
+            "url": "data/seen.json",
+            "format": {
+              "type": "topojson",
+              "feature": "seen"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "color": "#F0F8FF",
+          }
+        },
+        {
+          "data": {
+            "url": "data/cities.json"
+          },
+          "encoding": {
+        "longitude": {
+          "field": "Longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "Latitude",
+          "type": "quantitative"
+        }
+      },
+      "layer": [{
+        "mark": {
+          "type": "circle",
+          "color": "orange",
+          "size": 100
+        }
+      }, {
+        "mark": {
+          "type": "text",
+          "dy": -10,
+          "dx": -10,
+          "size": 15,
+          "color": "white"
+
+        },
+        "encoding": {
+          "text": {"field": "City", "type": "nominal"}
+        }
+      }]
+    
+          
+        },
+      ],
+      "config": {}
+    };
+    vegaEmbed("#vis", spec, { mode: "vega-lite", actions: false }).then(console.log).catch(console.warn);
+  </script>
+</body>
+
+</html>

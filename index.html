@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Zeckenstich Risiko</title>
+
+		<link rel="stylesheet" href="revealjs/dist/reset.css">
+		<link rel="stylesheet" href="revealjs/dist/reveal.css">
+		<link rel="stylesheet" href="revealjs/dist/theme/black.css">
+
+		<link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-image="images/tree-g4437d4010_1280.jpg">
+					<h1 class="r-fit-text outline">Risiko Zeckenstich</h1>
+					<h1 class="r-fit-text outline fragment">Ein Zusammenspiel aus Gefahr und Exposition</h1>
+				</section>
+
+				<section data-transition="none">
+					<h2 class="r-fit-text">Alle Jahre wieder: Zecken in den Medien</h2>
+
+
+					<div class="img-overlay-container" style="background-image: url('images/srf-screenshot-1.png');height: 500px;">
+		
+					</div>
+
+					<aside class="notes">
+				
+						<ul>
+							<li>Jeden Frühling sind Zecken Thema</li>
+							<li>Dieses Jahr: Zecken machen keine Winterstarre mehr: 
+								Wie wird sich der Klimawandel und die damit verbundenen
+								höheren Teperaturen auf das Zeckenstichrisiko auswirken?
+							</li>
+						</ul>
+				
+					</aside>
+				</section>
+
+
+				<section data-transition="none">
+					<h2 class="r-fit-text">Alle Jahre wieder: Zecken in den Medien</h2>
+
+					
+					<div class="img-overlay-container" style="background-image: url('images/srf-screenshot.png');height: 500px;">
+						<div class="img-highlight" style="width: 250px; font-size: 30px;top: 430px">
+							<div style="background-color: #af001e; ">Felix Ineichen</div>
+							<div style="font-size: 15px; background-color: white; color: black">Arbeitsmediziner Suva</div>
+						</div>
+					</div>
+
+
+					<aside class="notes">
+						
+						<ul>
+							<li>Der "Beweis": Zeckenstich-Meldungen via dem Zecken App</li>
+						</ul>
+						
+
+					</aside>
+				</section>
+
+				<section>
+
+					<p class="r-fit-text">
+						<span style="color: #00ffa5">Google Suchanfragen</span>
+						(<em>Ticks</em>) vs. 
+						<span style="color: #FFA500">Zeckenstichmeldungen App</span>
+					</hp>
+
+					<div class="fig-container"
+						 data-file="google-trends.html"></div>
+
+				</section>
+
+				<!-- <section data-background-iframe="https://www.srf.ch/play/tv/-/video/-?urn=urn:srf:video:21a0ec84-bf6a-4b00-b1c6-7d58cf313326&startTime=26"></section> -->
+
+				<section data-background-video="images/steps.mp4" data-autoplay="true">
+					
+				</section>
+
+	
+
+				<section data-background-iframe="https://map.geo.admin.ch/?lang=en&topic=ech&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.bag.zeckenstichmodell&layers_opacity=0.75&E=2648450.00&N=1188529.17&zoom=2">
+
+				</section>
+
+				<section>
+					<h5>Zeckenstich Meldungen 2015 - 2023</h5>
+					<p>40'000 zuverlässige Meldungen</p>
+					<div class="fig-container"
+						 data-file="tick-map.html"></div>
+				</section>
+
+		
+				<section data-transition="none">
+					<div class="r-hstack equation">
+						<div class="fragment highlight-current-red">Risk</div>
+						<div>=</div>
+						<div class="fragment highlight-current-red">Hazard</div>
+						<div>×</div>
+						<div class="fragment highlight-current-red">Exposure</div>
+					</div>
+				</section>
+
+				<section data-transition="none" data-auto-animate>
+					<div class="r-hstack equation">
+						<div data-id="risk">Risk</div>
+						<div data-id="eq">=</div>
+						<div data-id="hazard">Hazard</div>
+						<div>×</div>
+						<div data-id="exposure">Exposure</div>
+					</div>
+				</section>
+
+				<section data-auto-animate>
+					<div class="r-hstack equation">
+						<div data-id="hazard">Hazard</div>
+						<div data-id="eq">=</div>
+						<div class="r-vstack">
+							<div data-id="risk">Risk</div>
+							<!-- <div>/</div> -->
+							<!-- <div><hr></div> -->
+							<div data-id="exposure" class="nenner">Exposure</div>
+						</div>
+						
+					</div>
+
+					
+				</section>
+
+				<section data-background-image="images/strava3.png"></section>
+				
+			</div>
+		</div>
+
+		<script src="revealjs/dist/reveal.js"></script>
+		<script src="revealjs/plugin/notes/notes.js"></script>
+		<script src="revealjs/plugin/markdown/markdown.js"></script>
+		<script src="revealjs/plugin/highlight/highlight.js"></script>
+		<script src="plugins/reveald3.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				autoAnimateEasing: "cubic-bezier(0.83, 0, 0.17, 1)",
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ Reveald3, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>

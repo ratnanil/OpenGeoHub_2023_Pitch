@@ -1,0 +1,25 @@
+.outline{
+    text-shadow: -1px -1px 0 #000 !important
+}
+
+.equation{
+    column-gap: 20px;
+    font-size: 80px;
+}
+
+    
+
+.nenner{
+    border-top: 1px solid white;
+}
+
+.img-overlay-container {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+}
+
+.img-highlight {
+    position: absolute;
+}

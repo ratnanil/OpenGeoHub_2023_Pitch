@@ -1,0 +1,52 @@
+[
+  {
+    "City": "Zurich",
+    "Latitude": 47.3769,
+    "Longitude": 8.5417
+  },
+  {
+    "City": "Geneva",
+    "Latitude": 46.2044,
+    "Longitude": 6.1432
+  },
+  {
+    "City": "Basel",
+    "Latitude": 47.5584,
+    "Longitude": 7.5733
+  },
+  {
+    "City": "Lausanne",
+    "Latitude": 46.5197,
+    "Longitude": 6.6323
+  },
+  {
+    "City": "Bern",
+    "Latitude": 46.948,
+    "Longitude": 7.4474
+  },
+  {
+    "City": "Winterthur",
+    "Latitude": 47.5,
+    "Longitude": 8.75
+  },
+  {
+    "City": "Lucerne",
+    "Latitude": 47.0505,
+    "Longitude": 8.3064
+  },
+  {
+    "City": "St. Gallen",
+    "Latitude": 47.4235,
+    "Longitude": 9.3767
+  },
+  {
+    "City": "Lugano",
+    "Latitude": 46.0037,
+    "Longitude": 8.9511
+  },
+  {
+    "City": "Biel/Bienne",
+    "Latitude": 47.1371,
+    "Longitude": 7.2467
+  }
+]

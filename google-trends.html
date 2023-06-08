@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.9.3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.1"></script>
+</head>
+
+<body>
+  <div id="vis" />
+  <script>
+    const spec = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "data": {"name": "app", "url": "data/monthly_counts.json" },
+      "width": 850,
+      // "title": "Data: Google Trends",
+      "height": 300,
+      "background": "#191919",
+      "transform": [
+        { "calculate": "year(datum.Month)", "as": "year" }
+      ],
+      
+      "encoding": {
+        "x": {
+          "field": "Month",
+          "type": "temporal",
+          "title": null,
+          "axis": {
+            "tickColor": "#FFFFFF",
+            // "domainColor": "#FFFFFF",
+            "domain": false,
+            "tickCount": {
+              "interval": "year",
+              "step": 2
+            }
+          }
+          // "timeUnit": "month",
+        },
+        "color": {
+          "field": "Source",
+          "type": "nominal", 
+          "scale": {"range": ["#00ffa5", "#FFA500"]},
+          "legend": {
+            "title": null,
+            "orient": "bottom",
+            "labelColor": "#FFFFFF",
+            "titleColor": "#FFFFFF",
+            "titleFontSize": "30",
+            "labelFontSize": "20"
+          }
+        },
+        "tooltip": [
+          { "timeUnit": "month", "field": "Month" },
+
+        ]
+      },
+      "layer": [
+        {
+          "mark": { 
+            "type": "line", 
+            // "color": "#42affa",
+            "fillOpacity": 0.3,
+          },
+          "encoding": {
+            // "strokeOpacity": {"value": 0.5},
+            "strokeDash": {"value": [3,2]},
+            // "interpolate": {"value": "step"},
+            "y": {
+              "field": "Value",
+              "type": "quantitative",
+              "title": "Search Index",
+              "axis": null //{"labels": false, "title": false}
+            },
+          }
+        },
+        {
+          "mark": "rule",
+          "params": [
+            {
+              "name": "hover",
+              "select": {
+                "type": "point",
+                "on": "mouseover",
+                "nearest": true,
+                "clear": "mouseout"
+              }
+            }
+            
+          ],
+          "encoding": {
+            "color": {
+              "condition": {
+                "param": "hover",
+                "empty": false,
+                "value": "#FFFFFF"
+              },
+              "value": "transparent"
+            }
+          }
+        },
+
+
+      ],
+
+      "config": {
+        "axis": {
+          "grid": false,
+          "labelFontSize": "20",
+          "labelColor": "#FFFFFF",
+          "titleColor": "#FFFFFF",
+          "titleFontSize": "20"
+          // "gridColor": "#191919"
+        },
+        "title": {
+          "color": "#FFFFFF",
+        },
+        "view": {"stroke": "transparent"}
+      }
+    };
+    vegaEmbed("#vis", spec, { mode: "vega-lite", actions: false }).then(console.log).catch(console.warn);
+  </script>
+</body>
+
+</html>
