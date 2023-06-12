@@ -1,6 +1,15 @@
 
 ## Story:
 
+
+1. Einführung: Zecken und ihr Risiko, auch in Hinblick auf den Klimawandel
+2. Tick App und die Meldungen
+3. Das Experten Model: Wie die Zeckenstich Meldungen ein EBM ermöglichten
+4. Zeckenstich Meldungen: Machine Learning
+   - 
+5. Risk = Hazard x Exposure
+6. 
+
 - Zeckenstiche sind immer wieder ein grosses Thema. 
 - screenshot aus tagesschau mit app im fokus
 - zecken im winter. Wie sieht das Zeckenrisiko mit dem Klimawandel aus?

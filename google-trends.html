@@ -15,7 +15,7 @@
       "data": {"name": "app", "url": "data/monthly_counts.json" },
       "width": 850,
       // "title": "Data: Google Trends",
-      "height": 300,
+      "height": 200,
       "background": "#191919",
       "transform": [
         { "calculate": "year(datum.Month)", "as": "year" }
@@ -41,14 +41,8 @@
           "field": "Source",
           "type": "nominal", 
           "scale": {"range": ["#00ffa5", "#FFA500"]},
-          "legend": {
-            "title": null,
-            "orient": "bottom",
-            "labelColor": "#FFFFFF",
-            "titleColor": "#FFFFFF",
-            "titleFontSize": "30",
-            "labelFontSize": "20"
-          }
+          "legend": null, // {"title": null,"orient": "bottom","labelColor": "#FFFFFF","titleColor": "#FFFFFF","titleFontSize": "30","labelFontSize": "20"}
+          
         },
         "tooltip": [
           { "timeUnit": "month", "field": "Month" },

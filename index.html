@@ -21,12 +21,58 @@
 					<h1 class="r-fit-text outline fragment">Ein Zusammenspiel aus Gefahr und Exposition</h1>
 				</section>
 
+				<section>
+
+					<div style="display: grid; grid-template-columns: 40% 60%; gap: 30px" >
+						<div style="justify-self: right; align-self: center;">
+							<img style="border-radius: 100%; height: 220px;" data-src="https://www.zhaw.ch/forschungsdaten/portraet/images/rata.gif" alt="">
+						</div>
+						<div style="text-align: left; font-size: 20px; ">
+							<p><strong>Nils Ratnaweera</strong></p>
+
+							<p>
+								Research Associate at the Research Group for Geoinformatics							
+							</p>
+
+							<p>
+								ZHAW School of Life Sciences and Facility Management<br>
+								Institute of Natural Resource Sciences<br>
+								Grüentalstrasse 14<br>
+								8820 Wädenswil<br>
+							</p>
+
+							<p>
+								+41 (0) 58 934 55 63 / <a href="mailto:nils.ratnaweera@zhaw.ch">nils.ratnaweera@zhaw.ch</a>
+							</p>
+							<p>
+								
+							</p>
+
+
+							
+							<p>
+								<a href="www.zhaw.ch/iunr/geoinformatik">www.zhaw.ch/iunr/geoinformatik</a>
+							</p>
+
+						</div>
+					</div>
+
+				</section>
+
 				<section data-transition="none">
-					<h2 class="r-fit-text">Alle Jahre wieder: Zecken in den Medien</h2>
+					<h2 class="r-fit-text">Jeden Frühling: Zecken im Fokus</h2>
 
 
 					<div class="img-overlay-container" style="background-image: url('images/srf-screenshot-1.png');height: 500px;">
 		
+						<div class="img-highlight" style="width: 500px; font-size: 30px;bottom: 30px; left: 400px">
+							<div class="fragment" style="background-color: #000000e3; text-align: left; padding: 20px; font-style: italic; font-size: 25px;">
+							
+								"Im Normalfall ist die Zecke im Winter nicht aktiv. Anders war es in diesem Winter..."
+							
+							</div>
+						</div>
+
 					</div>
 
 					<aside class="notes">
@@ -42,9 +88,22 @@
 					</aside>
 				</section>
 
+				<section>
+				
+					
+					<div style="padding-top: 150px;" class="r-stack">
+						<div class="fig-container" data-file="zecken-krankheiten.html"></div>
+						<p style="text-align: left; font-size: 20px; "><a href="https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/zeckenuebertragene-krankheiten.html">Quelle: Bundesamt für Gesundheit</a> </p>	
+					</div>
+					
+					
+
+					
+				</section>
+
 
 				<section data-transition="none">
-					<h2 class="r-fit-text">Alle Jahre wieder: Zecken in den Medien</h2>
+					<h2 class="r-fit-text">Jeden Frühling: Zecken im Fokus</h2>
 
 					
 					<div class="img-overlay-container" style="background-image: url('images/srf-screenshot.png');height: 500px;">
@@ -67,14 +126,19 @@
 
 				<section>
 
-					<p class="r-fit-text">
-						<span style="color: #00ffa5">Google Suchanfragen</span>
-						(<em>Ticks</em>) vs. 
-						<span style="color: #FFA500">Zeckenstichmeldungen App</span>
-					</hp>
+					<p class="r-fit-text", style="padding-bottom: 100px;">
+						<span style="color: #00ffa5">Google Suchanfragen (<em>Ticks</em>) </span>
+						vs. 
+						<span style="color: #FFA500">Meldungen ZeckenApp</span>
+					</p>
 
-					<div class="fig-container"
-						 data-file="google-trends.html"></div>
+					
+
+					<div class="fig-container" data-file="google-trends.html"></div>
+
+				</section>
+
+				
 
 				</section>
 
@@ -83,13 +147,7 @@
 				<section data-background-video="images/steps.mp4" data-autoplay="true">
 					
 				</section>
-
-	
-
-				<section data-background-iframe="https://map.geo.admin.ch/?lang=en&topic=ech&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.bag.zeckenstichmodell&layers_opacity=0.75&E=2648450.00&N=1188529.17&zoom=2">
-
-				</section>
-
+		
 				<section>
 					<h5>Zeckenstich Meldungen 2015 - 2023</h5>
 					<p>40'000 zuverlässige Meldungen</p>
@@ -97,6 +155,10 @@
 						 data-file="tick-map.html"></div>
 				</section>
 
+
+				<section data-background-iframe="https://map.geo.admin.ch/?lang=en&topic=ech&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.bag.zeckenstichmodell&layers_opacity=0.75&E=2648450.00&N=1188529.17&zoom=2">
+
+				</section>
 		
 				<section data-transition="none">
 					<div class="r-hstack equation">
@@ -124,8 +186,6 @@
 						<div data-id="eq">=</div>
 						<div class="r-vstack">
 							<div data-id="risk">Risk</div>
-							<!-- <div>/</div> -->
-							<!-- <div><hr></div> -->
 							<div data-id="exposure" class="nenner">Exposure</div>
 						</div>
 						
@@ -134,7 +194,19 @@
 					
 				</section>
 
-				<section data-background-image="images/strava3.png"></section>
+				<section data-background-image="images/strava3.png"  data-auto-animate>
+					<!-- <div data-id="exposure" style="font-size: 280px;">Exposure</div> -->
+				</section>
+
+				<section data-visibility="hidden">
+					
+					<div style="display: flex; align-items:center; padding-top: 200px;">
+						<div style="align-self: center;" class="fig-container" data-file="chartjs.html"></div>
+					</div>
+					
+				</section>
+
+
 				
 			</div>
 		</div>
@@ -144,6 +216,8 @@
 		<script src="revealjs/plugin/markdown/markdown.js"></script>
 		<script src="revealjs/plugin/highlight/highlight.js"></script>
 		<script src="plugins/reveald3.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="mychart.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
