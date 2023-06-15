@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="revealjs/dist/reset.css">
+    <link rel="stylesheet" href="revealjs/dist/reveal.css">
+    <link rel="stylesheet" href="revealjs/dist/theme/black.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-state="myanmiate">
+                <ul>
+                    <li class="fragment">one</li>
+                    <li class="fragment">two</li>
+                </ul>
+
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+    <script src="revealjs/dist/reveal.js"></script>
+    <script src="plugins/reveald3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+
+
+
+
+
+
+
+    </script>
+
+    <script>
+        Reveal.initialize({
+            // histroy: true
+        });
+        // document.addEventListener('DOMContentLoaded', function () {
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            Reveal.on("myanmiate", event => {
+                Reveal.on('fragmentshown', event => {
+                    console.log("sdfasd")
+                    // console.log( event.previousSlide );
+                    myChart.data.datasets[0].data = [5, 10, 15, 20, 25, 30];
+                    myChart.update();
+                });
+            })
+
+        // });
+    </script>
+
+</body>
+
+</html>
