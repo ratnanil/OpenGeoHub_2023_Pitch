@@ -9,17 +9,18 @@
 <body>
     <div class="reveal">
         <div class="slides">
-            <section data-state="myanmiate">
-                <ul>
-                    <li class="fragment">one</li>
-                    <li class="fragment">two</li>
-                </ul>
 
-                <div>
-                    <canvas id="myChart"></canvas>
+
+            <section>
+                <!-- <button class="next">Next</button> -->
+                <div class="r-stack">
+                    <div class="fragment fade-in-then-out"" id=" one">one</div>
+                    <div class="fragment fade-in-then-out" id="two">two</div>
+                    <div class="fragment fade-in-then-out" id="three">three</div>
                 </div>
-
+                <canvas id="myChart"></canvas>
             </section>
+
         </div>
     </div>
 
@@ -39,49 +40,91 @@
     <script>
         Reveal.initialize({
             // histroy: true
+            hash: true
         });
-        // document.addEventListener('DOMContentLoaded', function () {
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+
+        let i = 0
+
+        // Reveal.on('fragmentshown', () => {
+        //     i += 1
+        //     console.log('fire'+ i);
+        // });
+
+        Reveal.on('fire', () => {
+            i += 1
+            console.log('fire' + i);
+            Reveal.off("fire")
+        });
+    </script>
+
+    <script>
+
+
+        let myChart;
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+
+
+        });
+
+        // document.querySelector(".next").onclick = event => {
+        //     console.log("next")
+        //     myChart.data.datasets[0].data = [5, 10, 15, 20, 25, 30];
+        //     myChart.update();
+        // }
+
+        Reveal.on("fragmentshown", () => {
+            if (document.querySelector(".current-fragment").id === "one") {
+                i += 1
+                // Your code to trigger the event goes here
+                console.log("Event triggered!" + i);
+
+                var ctx = document.getElementById('myChart').getContext('2d');
+                myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        datasets: [{
+                            label: '# of Votes',
+                            data: [12, 19, 3, 5, 2, 3],
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
                     }
-                }
+                });
             }
         });
 
-        Reveal.on('fragmentshown', event => {
-            // Reveal.on("myanmiate", event => {
-            if (Reveal.getSlidesAttributes()[0]["data-state"] == "myanimate") {
-                console.log("one")
-                var currentSlideIndex = Reveal.getIndices().h;
-                if (currentSlideIndex > -1) {
-                    myChart.data.datasets[0].data = [5, 10, 15, 20, 25, 30];
-                } else {
-                    myChart.data.datasets[0].data = [10, 10, 10, 10, 10, 10];
+        Reveal.on("fragmenthide", () => {
+            if (document.querySelector(".current-fragment").id === "one") {
+                myChart.distroy()
+            })
+    });
 
-                }
+
+        Reveal.on("fragmentshown", () => {
+            if (document.querySelector(".current-fragment").id === "two") {
+                i += 1
+                // Your code to trigger the event goes here
+                console.log("Event triggered!" + i);
+
+                myChart.data.datasets[0].data = [5, 10, 15, 20, 25, 30];
                 myChart.update();
             }
+        });
 
-            // });
-        })
 
-        // });
     </script>
+
 
 </body>
 
